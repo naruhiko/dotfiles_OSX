@@ -35,8 +35,8 @@ esac
 echo "---------- Japanese env. ----------"
 apt install -y locales
 apt install language-pack-ja-base language-pack-ja ibus-mozc
-echo 'export LANG="ja_JP.UTF-8"' >> ~/.bashrc
-echo 'export LANGUAGE="ja_JP:ja"' >> ~/.bashrc
+#echo 'export LANG="ja_JP.UTF-8"' >> ~/.bashrc
+#echo 'export LANGUAGE="ja_JP:ja"' >> ~/.bashrc
 
 echo "------------ zsh ------------"
 #read -p "Change the Shell into zsh ? (y/n)" Answer < /dev/tty
@@ -77,7 +77,7 @@ fi
 cd
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract-and-run
+./nvim.appimage --appimage-extract
 
 apt install git automake bison build-essential pkg-config libevent-dev libncurses5-dev
 cd /usr/local/src/
@@ -106,6 +106,14 @@ fi
 echo "finished"
 
 echo "---------- cloning naruhiko mods. ----------"
+cp ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
+cp ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
+cp ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+cp ~/dotfiles_linux/.tmux.conf ~/.tmux.conf
+cp ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
+cp ~/dotfiles_linux/.zprofile ~/.zprofile
+cp ~/dotfiles_linux/.zshenv ~/.zshenv
+cp ~/dotfiles_linux/.zshrc ~/.zshrc
 ln -sf ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
 ln -sf ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
@@ -114,6 +122,5 @@ ln -sf ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
 ln -sf ~/dotfiles_linux/.zprofile ~/.zprofile
 ln -sf ~/dotfiles_linux/.zshenv ~/.zshenv
 ln -sf ~/dotfiles_linux/.zshrc ~/.zshrc
-echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> ~/.zshrc
 echo "FINISHED!"
 /usr/bin/zsh
