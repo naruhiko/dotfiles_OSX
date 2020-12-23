@@ -84,14 +84,14 @@ fi
 echo "finished"
 
 echo "---------- cloning naruhiko mods. ----------"
- ln -sf ~/dotfiles/.config/nvim/dein.toml ~/.config/nvim/dein.toml
- ln -sf ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
- ln -sf ~/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
- ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
- ln -sf ~/dotfiles/.zpreztorc ~/.zpreztorc
- ln -sf ~/dotfiles/.zprofile ~/.zprofile
- ln -sf ~/dotfiles/.zshenv ~/.zshenv
- ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ ln -sf ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
+ ln -sf ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
+ ln -sf ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ ln -sf ~/dotfiles_linux/.tmux.conf ~/.tmux.conf
+ ln -sf ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
+ ln -sf ~/dotfiles_linux/.zprofile ~/.zprofile
+ ln -sf ~/dotfiles_linux/.zshenv ~/.zshenv
+ ln -sf ~/dotfiles_linux/.zshrc ~/.zshrc
  echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> .zshrc
 echo "FINISHED!"
 /root/linuxbrew/.linuxbrew/bin/zsh
