@@ -15,36 +15,41 @@ echo " ------------ Homebrew ------------"
 read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
 case ${Answer} in
   y|Y)
-    if [[ -d ~/linuxbrew ]]
+    if [[ -d /home/linuxbrew ]]
     then
       echo "Already exist"
     else
       echo "Start Install Homebrew..."
       apt install build-essential curl file
-      git clone https://github.com/Homebrew/brew ~/linuxbrew/.linuxbrew/Homebrew
-      mkdir ~/linuxbrew/.linuxbrew/bin
-      ln -sf ~/linuxbrew/.linuxbrew/Homebrew/bin/brew ~/linuxbrew/.linuxbrew/bin
-      eval $(~/linuxbrew/.linuxbrew/bin/brew shellenv)
+      git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew/Homebrew
+      mkdir /home/linuxbrew/.linuxbrew/bin
+      ln -sf /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin
+      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       echo "Homebrew Installed" 
     fi ;;
   n|N)
     echo "Skipped" ;;
 esac
 
+echo "---------- Japanese env. ----------"
+apt install -y locales
+apt install language-pack-ja-base language-pack-ja ibus-mozc
+echo 'export LANG="ja_JP.UTF-8"' >> ~/.bashrc
+echo 'export LANGUAGE="ja_JP:ja"' >> ~/.bashrc
+
 echo "------------ zsh ------------"
 read -p "Change the Shell into zsh ? (y/n)" Answer < /dev/tty
 case ${Answer} in
   y|Y)
-    if [[ -d ~/linuxbrew/.linuxbrew/bin/zsh ]]
+    if [ -d /home/linuxbrew/.linuxbrew/bin/zsh ] || [ -d /usr/bin/zsh ]
     then
       echo "Already exist"
     else
-      echo 'Defaults env_keep += "PATH"' >> /etc/sudoers
-      sed -i -e "s/Defaults secure_path/\#Defaults secure_path/g" /etc/sudoers
-      brew install zsh zsh-syntax-highlighting
-      echo '/root/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells 
+      apt install zsh
+      echo '/usr/bin/zsh' >> /etc/shells 
     fi
-    chsh -s /root/linuxbrew/.linuxbrew/bin/zsh
+    chsh -s /usr/bin/zsh
+    touch ~/.zshrc
     FILE="${HOME}/.bash_profile"
         if [[ -e ${FILE} ]]; then
           source ${FILE} >> ~/.zshrc
@@ -68,7 +73,22 @@ else
   mkdir nvim
 fi
 cd
-brew install nvim tmux python
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+
+apt install git automake bison build-essential pkg-config libevent-dev libncurses5-dev
+cd /usr/local/src/
+git clone https://github.com/tmux/tmux
+cd ./tmux/
+./autogen.sh
+./configure --prefix=/usr/local
+make
+make install
+cd
+apt install python3
+
+echo "---------- dein ----------"
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 sh ./installer.sh ~/.config/nvim/dein
 echo "finished"
@@ -84,14 +104,14 @@ fi
 echo "finished"
 
 echo "---------- cloning naruhiko mods. ----------"
- ln -sf ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
- ln -sf ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
- ln -sf ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
- ln -sf ~/dotfiles_linux/.tmux.conf ~/.tmux.conf
- ln -sf ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
- ln -sf ~/dotfiles_linux/.zprofile ~/.zprofile
- ln -sf ~/dotfiles_linux/.zshenv ~/.zshenv
- ln -sf ~/dotfiles_linux/.zshrc ~/.zshrc
- echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> .zshrc
+ln -sf ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
+ln -sf ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -sf ~/dotfiles_linux/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
+ln -sf ~/dotfiles_linux/.zprofile ~/.zprofile
+ln -sf ~/dotfiles_linux/.zshenv ~/.zshenv
+ln -sf ~/dotfiles_linux/.zshrc ~/.zshrc
+echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> .zshrc
 echo "FINISHED!"
-/root/linuxbrew/.linuxbrew/bin/zsh
+/usr/bin/zsh
