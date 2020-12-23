@@ -114,6 +114,6 @@ ln -sf ~/dotfiles_linux/.zpreztorc ~/.zpreztorc
 ln -sf ~/dotfiles_linux/.zprofile ~/.zprofile
 ln -sf ~/dotfiles_linux/.zshenv ~/.zshenv
 ln -sf ~/dotfiles_linux/.zshrc ~/.zshrc
-echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> .zshrc
+echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> ~/.zshrc
 echo "FINISHED!"
 /usr/bin/zsh
