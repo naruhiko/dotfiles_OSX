@@ -84,10 +84,10 @@ fi
 echo "finished"
 
 echo "---------- cloning naruhiko mods. ----------"
- ln -s ~/dotfiles/.config/nvim/dein.toml ~/.config/nvim/dein.toml
- ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
- ln -s ~/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
- ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ ln -sf ~/dotfiles/.config/nvim/dein.toml ~/.config/nvim/dein.toml
+ ln -sf ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ ln -sf ~/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
  ln -sf ~/dotfiles/.zpreztorc ~/.zpreztorc
  ln -sf ~/dotfiles/.zprofile ~/.zprofile
  ln -sf ~/dotfiles/.zshenv ~/.zshenv
