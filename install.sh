@@ -12,9 +12,9 @@ echo -e "\n
      \/                                         \/  "
 
 echo " ------------ Homebrew ------------"
-#read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
-#case ${Answer} in
-# y|Y)
+read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
+case ${Answer} in
+ y|Y)
     if [[ -d /home/linuxbrew ]]
     then
       echo "Already exist"
@@ -27,10 +27,10 @@ echo " ------------ Homebrew ------------"
       eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       echo "Homebrew Installed" 
     fi 
-#    ;;
-#  n|N)
-#    echo "Skipped" ;;
-#esac
+    ;;
+  n|N|*)
+    echo "Skipped" ;;
+esac
 
 echo "---------- Japanese env. ----------"
 apt install -y locales
