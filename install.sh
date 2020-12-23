@@ -65,6 +65,7 @@ echo "------------ zsh ------------"
 
 echo "---------- nvim & tmux ----------"
 echo "processing..."
+apt install build-essential curl file
 if [[ -d .config ]]
 then
   echo "Already exist config file"
