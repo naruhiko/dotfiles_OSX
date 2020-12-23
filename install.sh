@@ -77,7 +77,7 @@ fi
 cd
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
-./nvim.appimage
+./nvim.appimage --appimage-extract-and-run
 
 apt install git automake bison build-essential pkg-config libevent-dev libncurses5-dev
 cd /usr/local/src/
