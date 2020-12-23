@@ -12,9 +12,9 @@ echo -e "\n
      \/                                         \/  "
 
 echo " ------------ Homebrew ------------"
-read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
-case ${Answer} in
-  y|Y)
+#read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
+#case ${Answer} in
+# y|Y)
     if [[ -d /home/linuxbrew ]]
     then
       echo "Already exist"
@@ -26,10 +26,11 @@ case ${Answer} in
       ln -sf /home/linuxbrew/.linuxbrew/Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin
       eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
       echo "Homebrew Installed" 
-    fi ;;
-  n|N)
-    echo "Skipped" ;;
-esac
+    fi 
+#    ;;
+#  n|N)
+#    echo "Skipped" ;;
+#esac
 
 echo "---------- Japanese env. ----------"
 apt install -y locales
@@ -38,9 +39,9 @@ echo 'export LANG="ja_JP.UTF-8"' >> ~/.bashrc
 echo 'export LANGUAGE="ja_JP:ja"' >> ~/.bashrc
 
 echo "------------ zsh ------------"
-read -p "Change the Shell into zsh ? (y/n)" Answer < /dev/tty
-case ${Answer} in
-  y|Y)
+#read -p "Change the Shell into zsh ? (y/n)" Answer < /dev/tty
+#case ${Answer} in
+#  y|Y)
     if [ -d /home/linuxbrew/.linuxbrew/bin/zsh ] || [ -d /usr/bin/zsh ]
     then
       echo "Already exist"
@@ -57,10 +58,10 @@ case ${Answer} in
           touch ${FILE}
         fi
     source ~/.zshrc
-    ;;
-  n|N)
-    echo "Skipped" ;;
-esac
+#    ;;
+#  n|N)
+#    echo "Skipped" ;;
+#esac
 
 echo "---------- nvim & tmux ----------"
 echo "processing..."
