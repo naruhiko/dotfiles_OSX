@@ -50,7 +50,7 @@ echo "------------ zsh ------------"
       echo '/usr/bin/zsh' >> /etc/shells 
     fi
     chsh -s /usr/bin/zsh
-    mk ~/.zshrc
+    touch ~/.zshrc
     FILE="${HOME}/.bash_profile"
         if [[ -e ${FILE} ]]; then
           source ${FILE} >> ~/.zshrc
