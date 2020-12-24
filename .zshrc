@@ -1,7 +1,6 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export PATH=$PATH:/Users/narus/Library/Python/3.9/bin
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -28,8 +27,8 @@ setopt list_packed
 zstyle ':completion:*' list-colors ''
 
 # プラグインを有効化
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # コマンドのスペルを訂正
 setopt correct
@@ -40,7 +39,7 @@ setopt no_beep
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
+ztyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
 zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
@@ -62,4 +61,3 @@ alias less='less -NM'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-export PATH="/usr/local/opt/llvm/bin:$PATH"

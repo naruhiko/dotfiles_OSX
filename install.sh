@@ -87,7 +87,7 @@ cd ./tmux/
 make
 make install
 cd
-apt install python3
+apt install python3 python3-pip nodejs npm
 
 echo "---------- dein ----------"
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
@@ -103,6 +103,12 @@ else
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
 echo "finished"
+
+echo "---------- nvim initializing ----------"
+mv ~/squashfs-root /usr/local/bin/nvim
+echo 'alias nvim="/usr/local/bin/nvim/AppImage"' >> ~/.zshrc
+pip3 install pynvim
+
 
 echo "---------- cloning naruhiko mods. ----------"
 cp ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
