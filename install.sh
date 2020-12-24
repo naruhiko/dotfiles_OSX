@@ -83,14 +83,17 @@ chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 
 apt install git automake bison build-essential pkg-config libevent-dev libncurses5-dev
-cd /usr/local/src/
-git clone https://github.com/tmux/tmux
-cd ./tmux/
-./autogen.sh
-./configure --prefix=/usr/local
-make
-make install
-cd
+if [ ! -d /uer/local/bin/tmux ]
+then
+  cd /usr/local/src/
+  git clone https://github.com/tmux/tmux
+  cd ./tmux/
+  ./autogen.sh
+  ./configure --prefix=/usr/local
+  make
+  make install
+  cd
+fi
 apt install python3 python3-pip nodejs npm
 
 echo "---------- dein ----------"
