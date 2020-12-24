@@ -50,13 +50,18 @@ echo "------------ zsh ------------"
       echo '/usr/bin/zsh' >> /etc/shells 
     fi
     chsh -s /usr/bin/zsh
-    mk ~/.zshrc
+    if [ -e ~/.zshrc ]
+    then
+    else
+      touch ~/.zshrc
     FILE="${HOME}/.bash_profile"
         if [[ -e ${FILE} ]]; then
           source ${FILE} >> ~/.zshrc
         elif [[ ! -e ${FILE} ]]; then
           touch ${FILE}
         fi
+    fi
+    source ~/.zshrc
 #    ;;
 #  n|N)
 #    echo "Skipped" ;;
