@@ -50,9 +50,8 @@ echo "------------ zsh ------------"
       echo '/usr/bin/zsh' >> /etc/shells 
     fi
     chsh -s /usr/bin/zsh
-    if [ -e ~/.zshrc ]
+    if [ ! -e ~/.zshrc ]
     then
-    else
       touch ~/.zshrc
     FILE="${HOME}/.bash_profile"
         if [[ -e ${FILE} ]]; then
