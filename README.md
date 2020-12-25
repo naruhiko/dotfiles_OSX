@@ -24,6 +24,7 @@ Sometimes installer ask you what you would install.
 
 ```sh
 cd
+apt update && apt install git
 git clone https://github.com/naruhiko/dotfiles_linux.git
 bash dotfiles_linux/install.sh
 ```
