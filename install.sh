@@ -83,7 +83,7 @@ chmod u+x nvim.appimage
 ./nvim.appimage --appimage-extract
 
 apt install git automake bison build-essential pkg-config libevent-dev libncurses5-dev
-if [ ! -d /usr/local/bin/tmux ]
+if [ ! -e /usr/local/bin/tmux ]
 then
   cd /usr/local/src/
   git clone https://github.com/tmux/tmux
