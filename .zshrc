@@ -58,6 +58,7 @@ alias vim='nvim'
 alias g='git'
 alias cat='cat -n'
 alias less='less -NM'
+alias nvim="/usr/local/bin/nvim/AppRun"
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
