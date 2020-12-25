@@ -119,7 +119,7 @@ echo "---------- nvim initializing ----------"
 mv ~/squashfs-root /usr/local/bin/nvim
 echo 'alias nvim="/usr/local/bin/nvim/AppRun"' >> ~/.zshrc
 rm -f installer.sh nvim.appimage
-npm install n
+npm install -g n
 n latest
 pip3 install pynvim
 
