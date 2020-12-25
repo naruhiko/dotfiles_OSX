@@ -7,11 +7,16 @@ config files & installer for vanilla Ubuntu environment.
 - installer
   - Homebrew(linuxbrew)
   - zsh
-  - nvim
   - tmux
-  - dein
+  - nvim
+    - dein(dein.toml)
+    - defx
+    - onedark theme
+    - denite
+    - coc.nvim
+    - airline
+    - auto-pairs
   - zprezto
-  - pynvim nodejs
 
 
 ### How to install
