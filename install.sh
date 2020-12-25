@@ -117,11 +117,14 @@ echo "finished"
 
 echo "---------- nvim initializing ----------"
 mv ~/squashfs-root /usr/local/bin/nvim
-echo 'alias nvim="/usr/local/bin/nvim/AppImage"' >> ~/.zshrc
+echo 'alias nvim="/usr/local/bin/nvim/AppRun"' >> ~/.zshrc
+rm -f installer.sh nvim.appimage
+npm install n
+n latest
 pip3 install pynvim
 
 
-echo "---------- cloning naruhiko mods. ----------"
+echo "---------- cloning mods. ----------"
 cp ~/dotfiles_linux/.config/nvim/dein.toml ~/.config/nvim/dein.toml
 cp ~/dotfiles_linux/.config/nvim/init.vim ~/.config/nvim/init.vim
 cp ~/dotfiles_linux/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json

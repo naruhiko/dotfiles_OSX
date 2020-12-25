@@ -27,8 +27,8 @@ setopt list_packed
 zstyle ':completion:*' list-colors ''
 
 # プラグインを有効化
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # コマンドのスペルを訂正
 setopt correct
