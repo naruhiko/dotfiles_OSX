@@ -41,3 +41,9 @@ You may copy the settings to your home directory, slink to your own settings.
 
 (your older setting will be overwrited, you should backup your originals)
 
+### Usage
+See user bind key in dein.toml(nvim), .tmux.conf(tmux)...
+
+coc does not contain plugins. To install, `:CocInstall coc-python` for example.
+
+You need to command `:UpdateRemotePlugins` in your first nvim launch.
