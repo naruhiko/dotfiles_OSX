@@ -9,7 +9,11 @@ echo -e "\n
  /    \|  |  \  | |  |    \   Y   / |   |/  \ /  \  
 |   |  \  |  /  |_|  |__   \     /  |   /    Y    \ 
 |___|  /____/|____/____/    \___/   |___\____|__  / 
-     \/                                         \/  "
+     \/                                         \/  
+                                                    
+                 ver 2020.12                        
+               Naruhiko Nagata
+               \n"
 
 echo " ------------ Homebrew ------------"
 read -p "Install Homebrew ? (y/n)" Answer < /dev/tty
